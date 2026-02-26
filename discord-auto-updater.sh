@@ -23,8 +23,7 @@ if [[ -z "${INSTALLED_VERSION}" ]] || dpkg --compare-versions "$LATEST_VERSION" 
 
   wget -q -O "$TMP_DEB" "https://discord.com/api/download?platform=linux&format=deb"
 
-  apt-get update -y
-  apt-get install -y "$TMP_DEB"
+  sudo dpkg -i "$TMP_DEB"
 
   echo "$LOG_TAG Update finished."
 else
